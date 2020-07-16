@@ -31,7 +31,13 @@ describe GildedRose do
     expect(items[0].quality).to eq(11)
   end
 
-  it "backstage passes increase quality with age twice as fast as Brie" do
+  it "backstage passes increase quality by 1 if concert more than 10 days in future" do
+    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 20, 10)] 
+    GildedRose.new(items).update_quality()
+    expect(items[0].quality).to eq(11)
+  end
+
+  it "backstage passes increase quality by 2 if concert in 10 days or less" do
     items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 10)] 
     GildedRose.new(items).update_quality()
     expect(items[0].quality).to eq(12)
