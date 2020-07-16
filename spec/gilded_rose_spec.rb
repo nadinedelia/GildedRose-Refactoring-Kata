@@ -5,6 +5,9 @@ describe GildedRose do
 
   describe "#update_quality" do
 
+
+    # GENERAL
+
     it "does not change the name" do
       items = [Item.new("Elixir of the Mongoose", 10, 10)]
       GildedRose.new(items).update_quality()
@@ -24,12 +27,22 @@ describe GildedRose do
     expect(items[0].quality).to eq(8)
   end
 
+  it 'quality is never more than 50' do
+    items = [Item.new("Aged Brie", 5, 50)] 
+    GildedRose.new(items).update_quality()
+    expect(items[0].quality).to_not eq(51)
+  end
+
+# BRIE
 
   it "brie increases quality with age" do
     items = [Item.new("Aged Brie", 10, 10)] 
     GildedRose.new(items).update_quality()
     expect(items[0].quality).to eq(11)
   end
+
+
+# BACKSTAGE PASSES
 
   it "backstage passes increase quality by 1 if concert more than 10 days in future" do
     items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 20, 10)] 
@@ -56,12 +69,7 @@ describe GildedRose do
   end
 
 
-  it 'quality is never more than 50' do
-      items = [Item.new("Aged Brie", 5, 50)] 
-      GildedRose.new(items).update_quality()
-      expect(items[0].quality).to_not eq(51)
-    end
-
+    # SULFURAS
 
   it 'Sulfuras never have to be sold or decrease quality' do
     items = [Item.new("Sulfuras, Hand of Ragnaros", 10, 10)] 
