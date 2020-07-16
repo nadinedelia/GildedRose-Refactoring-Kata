@@ -33,6 +33,15 @@ describe GildedRose do
     expect(items[0].quality).to_not eq(51)
   end
 
+  it "quality of item can never be negative" do 
+    items = [Item.new("Elixir of the Mongoose", 10, 1)] 
+      GildedRose.new(items).update_quality()
+      GildedRose.new(items).update_quality()
+    expect(items[0].sell_in).to eq(8)
+    expect(items[0].quality).to be >= 0
+  end
+
+
 # BRIE
 
   it "brie increases quality with age" do
@@ -84,8 +93,6 @@ describe GildedRose do
     expect(items[0].sell_in).to eq(10)
     expect(items[0].quality).to eq(70)
   end
-
-  
 
 
   end
