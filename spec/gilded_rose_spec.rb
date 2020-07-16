@@ -33,18 +33,18 @@ describe GildedRose do
     expect(items[0].quality).to eq(10)
   end
 
-  it "backstage passes increase quality with age" do
-    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 9)] 
+  xit "backstage passes increase quality with age" do
+    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 10)] 
     GildedRose.new(items).update_quality()
-    expect(items[0].quality).to eq(10)
+    expect(items[0].quality).to eq(11)
   end
 
 # The Quality of an item is never more than 50
 
-  xit 'quality is never more than 50' do
-      items = [Item.new("Aged Brie", 5, 49)] 
+  it 'quality is never more than 50' do
+      items = [Item.new("Aged Brie", 5, 50)] 
       GildedRose.new(items).update_quality()
-      expect(items[0].quality).to_not eq(50)
+      expect(items[0].quality).to_not eq(51)
     end
 
 
