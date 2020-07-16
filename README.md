@@ -58,13 +58,13 @@ an item can never have its Quality increase above 50
 
 - [x] Done
 
+# In Progress
+
 ```
 "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 ```
 
-- [x] Done
-
-# In Progress
+- [x] Done-ish / doesnt have to be 80 atm
 
 ```
 The Quality of an item is never negative
