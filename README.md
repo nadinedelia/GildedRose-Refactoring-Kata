@@ -1,6 +1,6 @@
 # Gilded Rose
 
-## Refactor Tech Test
+## Refactoring Kata
 
 ![](markdownimg.png)
 
