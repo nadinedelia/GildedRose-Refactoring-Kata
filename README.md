@@ -8,7 +8,7 @@
 
 [Click here](specification)
 
-## To do's / Tests to write
+## Tested
 
 ```
 All items have a SellIn value which denotes the number of days we have to sell the item
@@ -58,19 +58,19 @@ an item can never have its Quality increase above 50
 
 - [x] Done
 
-# In Progress
+```
+The Quality of an item is never negative
+```
+
+- [x] Done
+
+# To Do
 
 ```
 "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 ```
 
 - [x] Done-ish / doesnt have to be 80 atm
-
-```
-The Quality of an item is never negative
-```
-
-- []
 
 ```
 "Conjured" items degrade in Quality twice as fast as normal items
