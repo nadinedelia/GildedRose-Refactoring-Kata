@@ -36,7 +36,7 @@ class GildedRose
         end
       end
       if item.name != "Sulfuras, Hand of Ragnaros"
-        item.sell_in = item.sell_in - 1
+        item.sell_in -= 1
       end
       if item.sell_in < 0
         if item.name != "Aged Brie"
@@ -47,7 +47,7 @@ class GildedRose
               end
             end
           else
-            item.quality = item.quality - item.quality
+            item.quality -= item.quality
           end
         else
           if item.quality < 50
