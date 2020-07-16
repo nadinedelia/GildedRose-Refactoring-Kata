@@ -1,6 +1,14 @@
-======================================
-Gilded Rose Refactor Fun
-======================================
+# Gilded Rose
+
+## Refactor Tech Test
+
+![](markdownimg.png)
+
+### Specifications:
+
+[Click here](specification)
+
+## To do's / Tests to write
 
 ```
 All items have a SellIn value which denotes the number of days we have to sell the item
