@@ -28,15 +28,15 @@ describe GildedRose do
   # "Aged Brie" & Backstage Passes actually increases in Quality the older it gets
 
   it "brie increases quality with age" do
-    items = [Item.new("Aged Brie", 5, 9)] 
-    GildedRose.new(items).update_quality()
-    expect(items[0].quality).to eq(10)
-  end
-
-  xit "backstage passes increase quality with age" do
-    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 5, 10)] 
+    items = [Item.new("Aged Brie", 10, 10)] 
     GildedRose.new(items).update_quality()
     expect(items[0].quality).to eq(11)
+  end
+
+  it "backstage passes increase quality with age twice as fast as Brie" do
+    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", 10, 10)] 
+    GildedRose.new(items).update_quality()
+    expect(items[0].quality).to eq(12)
   end
 
 # The Quality of an item is never more than 50
