@@ -12,10 +12,11 @@ describe GildedRose do
     end
   end
 
-  it "changes the Sell-in value by 1" do 
-      items = [Item.new("Pizza", 10, 12)]
+  it "when still in date, change quality by 1" do 
+      items = [Item.new("Eggs Benedict", 25, 12)]
       GildedRose.new(items).update_quality()
-      expect { GildedRose.new(items).update_quality() }.to change { items[0].sell_in }.by(-1)
+      expect(items[0].sell_in).to eq(24)
+      expect(items[0].quality).to eq(11)
   end
 
 end
