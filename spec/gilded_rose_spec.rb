@@ -49,6 +49,12 @@ describe GildedRose do
     expect(items[0].quality).to eq(13)
   end
 
+  it "backstage passes worth 0 if concert in the past" do
+    items = [Item.new("Backstage passes to a TAFKAL80ETC concert", -1, 10)] 
+    GildedRose.new(items).update_quality()
+    expect(items[0].quality).to eq(0)
+  end
+
 
   it 'quality is never more than 50' do
       items = [Item.new("Aged Brie", 5, 50)] 
