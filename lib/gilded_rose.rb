@@ -27,11 +27,16 @@ class GildedRose
 
   # --------------  BACKSTAGE PASSES -------------- 
   if item.name == "Backstage passes to a TAFKAL80ETC concert"
-    item.sell_in <= 5 ? item.quality += 3 : item.quality += 2 unless item.quality == MAX_QUALITY
-   if item.sell_in <= DUE_DATE
-      item.quality = MIN_QUALITY
-   end
- end
+    if item.sell_in <= DUE_DATE
+      item.quality == 0
+    elsif item.sell_in > 10 != (item.quality == MAX_QUALITY)
+      item.quality += 1
+    elsif item.sell_in <= 10
+      item.quality += 2 
+    else
+      item.quality += 3
+    end
+  end
 
  # --------------  SULFURAS -------------- 
  if item.name == "Sulfuras, Hand of Ragnaros"
