@@ -21,6 +21,20 @@ class GildedRose
         item.sell_in <= 0 ? item.quality += 2 : item.quality += 1 unless item.quality == MAX_QUALITY
       end
 
+      if item.name == "Backstage passes to a TAFKAL80ETC concert"
+        if item.sell_in <= 0
+          item.quality == 0
+        elsif item.sell_in > 10 
+          item.quality += 1
+        elsif item.sell_in <= 10
+          item.quality += 2 
+        elsif item.sell_in <= 5  
+          item.quality += 3
+        else item.quality == MAX_QUALITY
+        end
+      end
+
+
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
