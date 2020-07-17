@@ -2,6 +2,7 @@ require_relative 'item'
 
 class GildedRose
 
+  DUE_DATE = 0
   MIN_QUALITY = 0
   MAX_QUALITY = 50
   BEST_QUALITY = 80
@@ -14,15 +15,15 @@ class GildedRose
     @items.each do |item|
 
       if basic_item(item)
-        item.sell_in <= 0 ? item.quality -= 2 : item.quality -= 1 unless item.quality == MIN_QUALITY
+        item.sell_in <= DUE_DATE ? item.quality -= 2 : item.quality -= 1 unless item.quality == MIN_QUALITY
       end
 
       if item.name == "Aged Brie"
-        item.sell_in <= 0 ? item.quality += 2 : item.quality += 1 unless item.quality == MAX_QUALITY
+        item.sell_in <= DUE_DATE ? item.quality += 2 : item.quality += 1 unless item.quality == MAX_QUALITY
       end
 
       if item.name == "Backstage passes to a TAFKAL80ETC concert"
-        if item.sell_in <= 0
+        if item.sell_in <= DUE_DATE
           item.quality == 0
         elsif item.sell_in > 10 
           item.quality += 1
