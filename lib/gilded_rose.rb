@@ -57,4 +57,12 @@ class GildedRose
       end
     end
   end
+
+  def basic_item(item)
+    item.name != "Aged Brie" && 
+    item.name != "Backstage passes to a TAFKAL80ETC concert" &&
+    item.name != "Sulfuras, Hand of Ragnaros" &&
+    item.name != "Conjured"
+  end
+
 end
