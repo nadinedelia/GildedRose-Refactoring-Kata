@@ -14,14 +14,18 @@ class GildedRose
   def update_quality()
     @items.each do |item|
 
+  # --------------  BASIC ITEMS -------------- 
+
       if basic_item(item)
         item.sell_in <= DUE_DATE ? item.quality -= 2 : item.quality -= 1 unless item.quality == MIN_QUALITY
       end
 
+  # --------------  AGED BRIE -------------- 
       if item.name == "Aged Brie"
         item.sell_in <= DUE_DATE ? item.quality += 2 : item.quality += 1 unless item.quality == MAX_QUALITY
       end
 
+  # --------------  BACKSTAGE PASSES -------------- 
       if item.name == "Backstage passes to a TAFKAL80ETC concert"
         if item.sell_in <= DUE_DATE
           item.quality == 0
@@ -34,6 +38,17 @@ class GildedRose
         else item.quality == MAX_QUALITY
         end
       end
+
+  # --------------  SULFURAS -------------- 
+      if item.name == "Sulfuras, Hand of Ragnaros"
+        item.quality == 80
+
+        
+
+
+
+
+
 
 
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
