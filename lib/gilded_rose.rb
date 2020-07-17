@@ -12,6 +12,12 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
+
+      if basic_item(item)
+        item.sell_in <= 0 ? item.quality -= 2 : item.quality -= 1 unless item.quality == MIN_QUALITY
+      end
+
+
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
         if item.quality > 0
           if item.name != "Sulfuras, Hand of Ragnaros"
